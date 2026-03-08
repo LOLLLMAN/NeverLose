@@ -12,7 +12,6 @@ Neverlose Recode UI for Roblox
 done
 
 <img width="528" height="335" alt="image" src="https://github.com/user-attachments/assets/87edd6cc-46fd-46ff-8f83-32c082113d25" />
-Note: Icons are safe to use without detection
 
 ## Example:
 ```lua
