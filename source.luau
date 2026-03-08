@@ -1,7 +1,5 @@
 --[[
                           Neverlose.cc UI Library
-            I don't care whether you want to give me credit or not.
-
     Author: 4lpaca
     Discord: https://arceney.win/discord
     Other-Projects: https://4lpaca.win
