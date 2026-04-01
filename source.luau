@@ -203,10 +203,12 @@ NeverLose.MainColor = Color3.fromRGB(8, 8, 13);
 NeverLose.RegisiteryColor = {};
 NeverLose.NameRegisitry = {};
 NeverLose.IsMosueOverOtherFrame = false;
-NeverLose.GlobalLogo = "rbxassetid://120957462769678";
+-- 1. Set the fallback ID (used if the executor doesn't support downloading)
+NeverLose.GlobalLogo = "rbxassetid://120957462769678"; 
 NeverLose.ImageColorMapping = "rbxassetid://4155801252";
 
 if getcustomasset then
+	-- 2. The base link to your repository
 	local link = "https://github.com/LOLLLMAN/NeverLose/blob/main/assets/%s?raw=true";
 	local dir = 'NLAssets';
 
@@ -215,15 +217,17 @@ if getcustomasset then
 	end;
 
 	pcall(function()
-		if not isfile(dir..'/'..'logo.png') then
-			local byte = game:HttpGet(string.format(link,'39dasdas26305904.png'));
+		-- 3. We check for 'custom_logo_v2.png' to force a fresh download of your new logo
+		if not isfile(dir..'/'..'custom_logo_v2.png') then
+			-- We use 'logo.png' as the string format target
+			local byte = game:HttpGet(string.format(link, 'logo.png'));
 
-			writefile(dir..'/'..'logo.png' , byte);
+			writefile(dir..'/'..'custom_logo_v2.png' , byte);
 			task.wait();
 		end;
 
-		if isfile(dir..'/'..'logo.png') then
-			NeverLose.GlobalLogo = getcustomasset(dir..'/'..'logo.png')
+		if isfile(dir..'/'..'custom_logo_v2.png') then
+			NeverLose.GlobalLogo = getcustomasset(dir..'/'..'custom_logo_v2.png')
 		end;
 	end);
 
